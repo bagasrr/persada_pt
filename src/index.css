@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap");
+@import "tailwindcss";
+
+@layer utilities {
+  .neon-text {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff3333, 0 0 20px #ff6666;
+  }
+}
+
+:root {
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --color-p-lightest: #f7f7f7;
+  --color-p-lighter: #eaeaea;
+  --color-p-light: #d8d8d8;
+  --color-p: #b2b2b2;
+  --color-p-dark: #919191;
+  --color-p-darker: #4682b4;
+  --color-p-darkest: #284c70;
+  --color-s-lightest: #87ceeb;
+  --color-s-lighter: #516e8b;
+  --color-s-light: #263238;
+  --color-s: #222222;
+}
