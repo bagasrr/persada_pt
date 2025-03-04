@@ -1,14 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavbarLink } from "../Elements/InsideNavbar";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, delay } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsVisible(true); // Navbar tetap muncul di atas halaman
+      } else if (window.scrollY > lastScrollY) {
+        setIsVisible(false); // Hide navbar saat scroll ke bawah
+      } else {
+        // Show navbar saat scroll ke atas
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  const mouseLeave = () => {
+    setTimeout(() => {
+      window.scrollY > 0 && setIsVisible(false);
+    }, 2000);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full min-h-[80px] bg-(--color-s) backdrop-blur-2xl font-(--font-poppins) text-white z-50 transition-all ease-in-out duration-300 flex justify-center px-5">
+    <nav
+      className={`fixed top-0 left-0 w-full min-h-[80px] bg-(--color-s) backdrop-blur-2xl font-(--font-poppins) text-white z-50 transition-all ease-in-out duration-300 flex justify-center px-5 ${
+        isVisible ? "translate-y-0" : "translate-y-[-95%]"
+      }`}
+      onMouseEnter={() => setIsVisible(true)}
+      onMouseLeave={() => mouseLeave()}
+    >
       <div className="container mx-auto flex justify-between items-center text-secondary z-40 font-arbitron">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 min-w-[50%] hover:scale-101 duration-500 ease-out top-0 z-30">
