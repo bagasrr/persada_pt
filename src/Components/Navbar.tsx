@@ -13,7 +13,10 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 min-w-[50%] hover:scale-101 duration-500 ease-out top-0 z-30">
           <img src="/src/persada_white.png" alt="Logo" className="h-8 md:h-10 lg:h-12" />
-          <span className="text-xs md:text-lg lg:text-2xl font-bold">PT PERSADA NUSANTARA BERSAUDARA</span>
+          <span>
+            <div className="text-xs md:text-lg lg:text-2xl font-bold">PT PERSADA NUSANTARA BERSAUDARA</div>
+            <div className="text-xs">SMART GREEN ENERGY PROVIDER</div>
+          </span>
         </Link>
 
         {/* Link Navbar untuk Layar Besar */}
