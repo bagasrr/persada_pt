@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavbarLink } from "../Elements/InsideNavbar";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence, delay } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full min-h-[80px] bg-(--color-s) backdrop-blur-2xl font-(--font-poppins) text-white z-50 transition-all ease-in-out duration-300 flex justify-center px-5 ${
-        isVisible ? "translate-y-0" : "translate-y-[-95%]"
+        isVisible ? "lg:translate-y-0" : "lg:translate-y-[-95%]"
       }`}
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => mouseLeave()}

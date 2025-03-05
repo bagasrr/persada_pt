@@ -20,9 +20,9 @@ export const ProductCard = ({ image, title, description }: ProductProps) => {
   );
 };
 
-export const Point = ({ src, caption }: { src: string; caption: string }) => {
+export const Point = ({ src, caption }: pointProps) => {
   return (
-    <div className="flex bg-slate-300 gap-3 p-5 items-center rounded-lg hover:bg-slate-50 transition-all duration-300 shadow-md w-fit md:w-60 lg:w-fit max-h-23">
+    <div className="flex bg-slate-300 gap-3 p-5 items-center rounded-lg hover:bg-slate-50 transition-all duration-300 shadow-md w-50 md:w-60 lg:w-fit max-h-23">
       <img src={src} alt="point" className="w-12 sm:w-14" />
       <section className="text-sm sm:text-md font-bold">{caption}</section>
     </div>

@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import StrengthPoint from "./StrengthPoint";
 
 const Banner = () => {
   return (
