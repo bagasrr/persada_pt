@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import StrengthPoint from "./StrengthPoint";
 
 const Banner = () => {
   return (
@@ -14,7 +15,8 @@ const Banner = () => {
       <img src="/src/banner.png" alt="Solar Panels" className="absolute inset-0 w-full h-full object-cover opacity-50" loading="lazy" />
       <div className="relative z-10 max-w-4xl px-6 text-white">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          UBAH SINAR MATAHARI <br /> MENJADI SOLUSI ENERGI <br /> ANDA
+          UBAH SINAR MATAHARI <br /> MENJADI SOLUSI <br />
+          ENERGI ANDA
         </h1>
         <section>
           <p className="mt-4 text-lg md:text-xl">Dapatkan kemerdekaan energi dan kurangi tagihan listrik Anda dengan panel surya berkualitas tinggi.</p>
